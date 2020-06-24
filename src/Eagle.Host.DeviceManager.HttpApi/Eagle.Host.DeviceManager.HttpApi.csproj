@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>Eagle.Host.DeviceManager</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="2.9.0" />
+    <ProjectReference Include="..\Eagle.Host.DeviceManager.Application.Contracts\Eagle.Host.DeviceManager.Application.Contracts.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,55 @@
+/* You can add global styles to this file, and also import other style files */
+
+:root {
+  --brand-color: #feba57;
+  --background-color: #eee;
+}
+
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background: var(--background-color);
+  z-index: 1001;
+
+  .indicator {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(2);
+
+    svg {
+      polyline {
+        fill: none;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+
+        &#back {
+          stroke: var(--brand-color);
+          opacity: 0.3;
+        }
+
+        &#front {
+          stroke: var(--brand-color);
+          stroke-dasharray: 12, 36;
+          stroke-dashoffset: 48;
+          animation: dash 1s linear infinite;
+        }
+      }
+    }
+  }
+}
+
+@keyframes dash {
+  62.5% {
+    opacity: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}

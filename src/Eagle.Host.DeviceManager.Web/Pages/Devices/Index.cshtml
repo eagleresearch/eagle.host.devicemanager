@@ -1,0 +1,72 @@
+@page
+@using Microsoft.AspNetCore.Authorization
+@using Volo.Abp.AspNetCore.Mvc.UI.Layout
+@using Eagle.Host.DeviceManager.Permissions
+@using Eagle.Host.DeviceManager.Web.Pages.Devices
+@using Eagle.Host.DeviceManager.Web.Menus
+@inherits Eagle.Host.DeviceManager.Web.Pages.DeviceManagerPage
+@inject IAuthorizationService Authorization
+@model IndexModel
+@inject IPageLayout PageLayout
+@{
+    PageLayout.Content.Title = L["Title:DeviceManager:Devices"].Value;
+    PageLayout.Content.MenuItemName = DeviceManagerMenus.Devices;
+}
+
+@section scripts
+{
+    <abp-script src="/Pages/Devices/index.js" />
+}
+
+@section content_toolbar {
+    @if (await Authorization.IsGrantedAsync(DeviceManagerPermissions.Devices.Create))
+    {
+        <abp-button id="NewDeviceButton"
+                    text="@L["Action:DeviceManager:Device:New"].Value"
+                    icon="plus"
+                    button-type="Primary" />
+    }
+}
+
+<abp-card>
+    <abp-card-body>
+		<abp-row class="mb-3">
+            <abp-column size-md="_12">
+                <div class="input-group mb-3">
+                    <input type="search"
+                           id="FilterText"
+                           class="form-control"
+                           placeholder="@L["Search:DeviceManager:Devices"]">
+
+                    <div class="input-group-append">
+                        <abp-button button-type="Outline_Secondary" icon="search" id="SearchButton"></abp-button>
+                    </div>
+                </div> 
+            </abp-column>
+            <abp-column size-md="_12">
+                <a href="javascript:;" id="AdvancedFilterSectionToggler">@L["Search:DeviceManager:Devices:SeeAdvancedFilters"]</a>
+            </abp-column>
+        </abp-row>
+        <abp-row id="AdvancedFilterSection" style="display: none;">
+                <abp-column size="_3">
+                    <abp-input asp-for="NumberFilterMin" label="@L["Search:DeviceManager:Devices:MinNumber"].Value" />
+                </abp-column>
+                <abp-column size="_3">
+                    <abp-input asp-for="NumberFilterMax" label="@L["Search:DeviceManager:Devices:MaxNumber"].Value" />
+                </abp-column>
+                <abp-column size="_3">
+                    <abp-input asp-for="NameFilter" label="@L["Search:DeviceManager:Devices:Name"].Value" />
+                </abp-column>
+
+        </abp-row>
+        <abp-table striped-rows="true" id="DevicesTable">
+            <thead>
+				<tr>
+					<th>@L["Action:DeviceManager:Device:Actions"]</th>
+					<th>@L["Field:DeviceManager:Devices:Number"]</th>
+					<th>@L["Field:DeviceManager:Devices:Name"]</th>
+				</tr>
+            </thead>
+        </abp-table>
+    </abp-card-body>
+</abp-card>

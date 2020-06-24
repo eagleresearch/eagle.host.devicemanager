@@ -1,0 +1,27 @@
+{
+  "culture": "en",
+    "texts": {
+        "Permission:DeviceManager": "Device Manager",
+        "Permission:DeviceManager:Devices": "Devices",
+        "Permission:DeviceManager:Devices:Create": "Create",
+        "Permission:DeviceManager:Devices:Edit": "Edit",
+        "Permission:DeviceManager:Devices:Delete": "Delete",
+        "Menu:DeviceManager": "Device Manager",
+        "Menu:DeviceManager:Devices": "Devices",
+        "Title:DeviceManager:Devices": "Devices",
+        "Action:DeviceManager:Device:Actions": "Actions",
+        "Action:DeviceManager:Device:New": "New Device",
+        "Action:DeviceManager:Device:Update": "Update",
+        "Action:DeviceManager:Device:Delete": "Delete",
+        "Search:DeviceManager:Devices": "Search",
+        "Search:DeviceManager:Devices:SeeAdvancedFilters": "See Advanced Filters",
+        "Search:DeviceManager:Devices:MinNumber": "Min Number",
+        "Search:DeviceManager:Devices:MaxNumber": "Max Number",
+        "Search:DeviceManager:Devices:Number": "Number",
+        "Search:DeviceManager:Devices:Name": "Name",
+        "Field:DeviceManager:Devices:Number": "Number",
+        "Field:DeviceManager:Devices:Name": "Name"
+
+
+    }
+}

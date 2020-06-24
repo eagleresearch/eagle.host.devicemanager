@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+    <RootNamespace>Eagle.Host.DeviceManager</RootNamespace>
+    <PreserveCompilationReferences>true</PreserveCompilationReferences>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Serilog.Extensions.Hosting" Version="3.0.0" />
+    <PackageReference Include="Serilog.Sinks.File" Version="4.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.0.0" />
+    <PackageReference Include="IdentityServer4.AccessTokenValidation" Version="3.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="3.1.4" />
+    <PackageReference Include="Microsoft.AspNetCore.DataProtection.StackExchangeRedis" Version="3.1.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.4" />
+    <PackageReference Include="Volo.Abp.Autofac" Version="2.9.0" />
+    <PackageReference Include="Volo.Abp.AspNetCore.Mvc.UI.MultiTenancy" Version="2.9.0" />
+    <PackageReference Include="Volo.Abp.EntityFrameworkCore.SqlServer" Version="2.9.0" />
+    <PackageReference Include="Volo.Abp.PermissionManagement.EntityFrameworkCore" Version="2.9.0" />
+    <PackageReference Include="Volo.Abp.SettingManagement.EntityFrameworkCore" Version="2.9.0" />
+    <PackageReference Include="Volo.Abp.AuditLogging.EntityFrameworkCore" Version="2.9.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Eagle.Host.DeviceManager.HttpApi\Eagle.Host.DeviceManager.HttpApi.csproj" />
+    <ProjectReference Include="..\..\src\Eagle.Host.DeviceManager.Application\Eagle.Host.DeviceManager.Application.csproj" />
+    <ProjectReference Include="..\..\src\Eagle.Host.DeviceManager.EntityFrameworkCore\Eagle.Host.DeviceManager.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\Eagle.Host.DeviceManager.Host.Shared\Eagle.Host.DeviceManager.Host.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Logs\**" />
+    <Content Remove="Logs\**" />
+    <EmbeddedResource Remove="Logs\**" />
+    <None Remove="Logs\**" />
+  </ItemGroup>
+
+</Project>

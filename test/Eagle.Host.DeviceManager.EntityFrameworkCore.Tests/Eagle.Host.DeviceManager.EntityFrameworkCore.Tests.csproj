@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>Eagle.Host.DeviceManager</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.2.0" />
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="3.1.4" />
+    <PackageReference Include="Volo.Abp.EntityFrameworkCore.Sqlite" Version="2.9.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Eagle.Host.DeviceManager.EntityFrameworkCore\Eagle.Host.DeviceManager.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\Eagle.Host.DeviceManager.TestBase\Eagle.Host.DeviceManager.TestBase.csproj" />
+  </ItemGroup>
+
+</Project>

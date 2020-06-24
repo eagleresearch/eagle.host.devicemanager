@@ -1,0 +1,8 @@
+{
+  "name": "device-manager",
+  "version": "0.0.1",
+  "dependencies": {
+    "@abp/ng.theme.shared": "~2.9.0",
+    "device-manager.config": "^0.0.1"
+  }
+}
