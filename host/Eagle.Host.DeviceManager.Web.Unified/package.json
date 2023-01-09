@@ -3,6 +3,6 @@
   "name": "demo-app",
   "private": true,
   "dependencies": {
-    "@volo/abp.aspnetcore.mvc.ui.theme.lepton": "^2.9.0"
+    "@volo/abp.aspnetcore.mvc.ui.theme.lepton": "^7.0.0"
   }
 }
